@@ -1,0 +1,23 @@
+{
+  "name": "cornerstone",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/naturalethic/cornerstone"
+  },
+  "dependencies": {
+    "html-minifier": "^2.1.2",
+    "html-to-vdom": "github:naturalethic/html-to-vdom#unconverted-attributes",
+    "jade": "^1.11.0",
+    "jquery": "^2.2.3",
+    "mix": "github:naturalethic/mix",
+    "nib": "^1.1.0",
+    "object-path": "github:naturalethic/object-path",
+    "rupture": "^0.6.1",
+    "stylus": "^0.53.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.5"
+  }
+}
