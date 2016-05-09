@@ -104,7 +104,7 @@ register-component = (name, component) ->
         if (path = it.get-attribute \state) and ((value = $get path) != undefined)
           it.value = value
       # @find '.ui.dropdown' .dropdown!
-    event: (name, ...args) ->
+    event: (name, ...args) !->
       query   = first(args |> filter -> is-type \String it)
       options = first(args |> filter -> is-type \Object it) or {}
       if callback = first(args |> filter -> is-type(\Function it) or is-type(\GeneratorFunction it))
@@ -144,7 +144,7 @@ register-component = (name, component) ->
         options.classify and (@all query |> each -> classify it, options.classify)
       @q.on name, (event, ...rest) ~>
         if query
-          if event.target in @find query
+          if event.bound-target = (find (-> it is event.target), @find(query)) or first(q(event.target).parents(query))
             fn event, ...rest
         else
           fn event, ...rest
